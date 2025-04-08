@@ -36,7 +36,7 @@ public class LoginUsuarios extends AppCompatActivity {
                 String password = etPassword.getText().toString().trim();
 
                 if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginUsuarios.this, "Por favor, complete ambos campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginUsuarios.this, "Por favor, complete ambos(2) campos", Toast.LENGTH_SHORT).show();
                 } else if (!email.matches("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
                     Toast.makeText(LoginUsuarios.this, "Correo electrónico inválido", Toast.LENGTH_SHORT).show();
                 } else {
