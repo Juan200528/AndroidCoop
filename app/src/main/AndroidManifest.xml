@@ -13,7 +13,19 @@
         android:theme="@style/Theme.ProyectCoop"
         tools:targetApi="31">
         <activity
+            android:name=".framents.Filtros"
+            android:exported="false" />
+        <activity
+            android:name=".models.Activity"
+            android:exported="false" />
+        <activity
+            android:name=".adapters.ActivitiesAdapter"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.BuscarActividad"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
