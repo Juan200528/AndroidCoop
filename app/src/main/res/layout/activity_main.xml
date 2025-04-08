@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_vertical"
+    android:background="#03A9F4">
+
+    <EditText
+        android:id="@+id/etCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Código"
+        android:inputType="number"
+        android:minHeight="50dp"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:textColorHint="#B3E5FC"
+        android:elevation="4dp"
+        android:layout_margin="8dp" />
+
+    <EditText
+        android:id="@+id/etCiudad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Nombre de la Ciudad"
+        android:inputType="text"
+        android:minHeight="50dp"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:textColorHint="#B3E5FC"
+        android:elevation="4dp"
+        android:layout_margin="8dp" />
+
+    <EditText
+        android:id="@+id/etDepartamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Nombre del Departamento"
+        android:inputType="text"
+        android:minHeight="50dp"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:textColorHint="#B3E5FC"
+        android:elevation="4dp"
+        android:layout_margin="8dp" />
+
+    <Button
+        android:id="@+id/btnInsertar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Insertar"
+        android:backgroundTint="#0277BD"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Actualizar"
+            android:backgroundTint="#01579B"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:gravity="center"/>
+</LinearLayout>
