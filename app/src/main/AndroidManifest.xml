@@ -30,7 +30,27 @@
             android:name="com.kevin.basesdedatoslocalesk.controller.MainActivity"
             android:exported="false" />
 
+<<<<<<< HEAD
         <!-- Login como pantalla principal -->
+=======
+        <!-- Actividades para gestión de actividades -->
+        <activity
+            android:name=".controller.crear_actividadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".controller.lista_actividadesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.item_actividadActivity"
+            android:exported="false" />
+
+        <!-- Registro de usuarios -->
+        <activity
+            android:name="com.kevin.basesdedatoslocalesk.RegistroUsuarios"
+            android:exported="true" />
+
+        <!-- Login como pantalla principal (launcher) -->
+>>>>>>> 45a5c5749266c47c54b3bb6b40540fe9aa7b470e
         <activity
             android:name="com.kevin.basesdedatoslocalesk.LoginUsuarios"
             android:exported="true">
@@ -40,6 +60,7 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <!-- Registro de usuarios -->
         <activity
             android:name="com.kevin.basesdedatoslocalesk.RegistroUsuarios"
@@ -60,5 +81,7 @@
             android:name=".controller.item_actividadActivity"
             android:exported="false" />
 
+=======
+>>>>>>> 45a5c5749266c47c54b3bb6b40540fe9aa7b470e
     </application>
 </manifest>
