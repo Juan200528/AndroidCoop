@@ -7,12 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.juan.proyectcoop.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.kevin.basesdedatoslocalesk.controller.Registro_participantes;
+import com.juan.proyectcoop.R;
 import com.kevin.basesdedatoslocalesk.model.ManagerDB;
+import com.kevin.basesdedatoslocalesk.RegistroUsuarios;
+import com.juan.proyectcoop.controller.crear_actividadActivity;
 
 public class LoginUsuarios extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class LoginUsuarios extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        tvRegister = findViewById(R.id.tvRegister); // ← aquí se conecta el TextView del layout
+        tvRegister = findViewById(R.id.tvRegister);
 
         managerDB = new ManagerDB(this);
 
@@ -40,7 +41,7 @@ public class LoginUsuarios extends AppCompatActivity {
                 String password = etPassword.getText().toString().trim();
 
                 if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginUsuarios.this, "Por favor, complete ambos(2) campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginUsuarios.this, "Por favor, complete ambos campos", Toast.LENGTH_SHORT).show();
                 } else if (!email.matches("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
                     Toast.makeText(LoginUsuarios.this, "Correo electrónico inválido", Toast.LENGTH_SHORT).show();
                 } else {
@@ -49,9 +50,10 @@ public class LoginUsuarios extends AppCompatActivity {
                     if (isValid) {
                         Toast.makeText(LoginUsuarios.this, "Bienvenido", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(LoginUsuarios.this, Registro_participantes.class);
+                        // Redirige a crear_actividadActivity después de login exitoso
+                        Intent intent = new Intent(LoginUsuarios.this, crear_actividadActivity.class);
                         startActivity(intent);
-                        finish();  // Opcional
+                        finish();
                     } else {
                         Toast.makeText(LoginUsuarios.this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                     }
@@ -59,7 +61,7 @@ public class LoginUsuarios extends AppCompatActivity {
             }
         });
 
-        // 🔗 Acción al presionar "¿No tienes una cuenta? Registrate"
+        // Ir a pantalla de registro si no tiene cuenta
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

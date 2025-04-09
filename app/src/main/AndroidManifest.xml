@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ProyectCoop"
         tools:targetApi="31">
 
-        <!-- Actividades del paquete com.kevin.basesdatoslocalesk.controller -->
+        <!-- Actividades del paquete com.kevin.basesdedatoslocalesk.controller -->
         <activity
             android:name="com.kevin.basesdedatoslocalesk.controller.EditarParticipante"
             android:exported="false" />
@@ -30,7 +30,7 @@
             android:name="com.kevin.basesdedatoslocalesk.controller.MainActivity"
             android:exported="false" />
 
-        <!-- Login como página principal -->
+        <!-- Login como pantalla principal -->
         <activity
             android:name="com.kevin.basesdedatoslocalesk.LoginUsuarios"
             android:exported="true">
@@ -40,14 +40,25 @@
             </intent-filter>
         </activity>
 
-        <!-- Registro de usuarios (ya no es launcher) -->
+        <!-- Registro de usuarios -->
         <activity
             android:name="com.kevin.basesdedatoslocalesk.RegistroUsuarios"
             android:exported="true" />
 
-        <!-- MainActivity de respaldo, no como launcher -->
+        <!-- Crear actividad (pantalla que se abre después del login) -->
         <activity
-            android:name="com.juan.proyectcoop.MainActivity"
+            android:name=".controller.crear_actividadActivity"
             android:exported="true" />
+
+        <!-- Lista de actividades -->
+        <activity
+            android:name=".controller.lista_actividadesActivity"
+            android:exported="false" />
+
+        <!-- Vista individual de actividad -->
+        <activity
+            android:name=".controller.item_actividadActivity"
+            android:exported="false" />
+
     </application>
 </manifest>
