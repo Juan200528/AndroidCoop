@@ -36,7 +36,7 @@
             android:exported="true" />
         <activity
             android:name=".controller.lista_actividadesActivity"
-            android:exported="false" />
+            android:exported="true" /> <!-- Cambié a true si es accesible desde otras pantallas -->
         <activity
             android:name=".controller.item_actividadActivity"
             android:exported="false" />
@@ -56,5 +56,9 @@
             </intent-filter>
         </activity>
 
+        <!-- Actividad de Redes Sociales -->
+        <activity
+            android:name=".controller.RedesSociales"
+            android:exported="true" /> <!-- Añadí esta actividad para compartir en redes sociales -->
     </application>
 </manifest>

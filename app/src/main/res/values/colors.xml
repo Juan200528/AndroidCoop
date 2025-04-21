@@ -2,4 +2,25 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+        <!-- Fondo principal -->
+        <color name="background_light">#F4F4F4</color>
+
+        <!-- Textos -->
+        <color name="text_primary">#333333</color>
+        <color name="text_secondary">#555555</color>
+        <color name="text_white">#FFFFFF</color>
+
+        <!-- Botón Facebook -->
+        <color name="facebook_blue">#3b5998</color>
+
+        <!-- Botón Instagram (para el gradiente) -->
+        <color name="instagram_yellow">#feda75</color>
+        <color name="instagram_pink">#d62976</color>
+        <color name="instagram_purple">#4f5bd5</color>
+
+        <!-- Botón principal -->
+        <color name="button_primary">#2196F3</color> <!-- Cambia este si usas otro color -->
+
+
 </resources>
