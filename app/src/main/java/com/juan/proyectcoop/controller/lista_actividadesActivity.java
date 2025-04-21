@@ -5,16 +5,19 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import com.google.android.material.card.MaterialCardView;
 import com.juan.proyectcoop.R;
 import com.juan.proyectcoop.model.ManagerDB;
-
 
 public class lista_actividadesActivity extends AppCompatActivity {
 
@@ -59,13 +62,39 @@ public class lista_actividadesActivity extends AppCompatActivity {
 
                 View actividadView = getLayoutInflater().inflate(R.layout.activity_item_actividad, null);
 
-                TextView tvTitulo = actividadView.findViewById(R.id.tvTitulo);
-                TextView tvEditar = actividadView.findViewById(R.id.tvEditar);
-                TextView tvEliminar = actividadView.findViewById(R.id.tvEliminar);
+                // Aplicar márgenes al contenedor (MaterialCardView)
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+                params.setMargins(18, 19, 18, 14); // Margen: izquierda, arriba, derecha, abajo
+                actividadView.setLayoutParams(params);
 
-                tvTitulo.setText(titulo);
+                // Referencias a los elementos del nuevo layout
+                TextView tvNombre = actividadView.findViewById(R.id.tvNombre);
+                TextView tvTituloActividad = actividadView.findViewById(R.id.tvTituloActividad);
+                TextView tvEmail = actividadView.findViewById(R.id.tvEmail);
+                Button btnVerDetalles = actividadView.findViewById(R.id.btnVerDetalles);
+                ImageButton btnEditar = actividadView.findViewById(R.id.btnEditar);
+                ImageButton btnEliminar = actividadView.findViewById(R.id.btneliminar);
+                Switch switchPromocion = actividadView.findViewById(R.id.switchPromocion);
+                ImageView iconoAgregar = actividadView.findViewById(R.id.iconoAgregarAsistentes);
 
-                tvEditar.setOnClickListener(v -> {
+                tvNombre.setText(titulo);
+                tvEmail.setText("Lugar: " + lugar + " | Fecha: " + fecha);
+
+                btnVerDetalles.setOnClickListener(v -> {
+                    Intent intent = new Intent(this, item_actividadActivity.class);
+                    intent.putExtra("id", id);
+                    intent.putExtra("titulo", titulo);
+                    intent.putExtra("descripcion", descripcion);
+                    intent.putExtra("fecha", fecha);
+                    intent.putExtra("lugar", lugar);
+                    intent.putExtra("responsables", responsables);
+                    startActivity(intent);
+                });
+
+                btnEditar.setOnClickListener(v -> {
                     Intent intent = new Intent(this, crear_actividadActivity.class);
                     intent.putExtra("id", id);
                     intent.putExtra("titulo", titulo);
@@ -76,7 +105,7 @@ public class lista_actividadesActivity extends AppCompatActivity {
                     startActivity(intent);
                 });
 
-                tvEliminar.setOnClickListener(v -> {
+                btnEliminar.setOnClickListener(v -> {
                     int resultado = managerDB.deleteActividad(id);
                     if (resultado > 0) {
                         Toast.makeText(this, "Actividad eliminada", Toast.LENGTH_SHORT).show();
@@ -87,14 +116,6 @@ public class lista_actividadesActivity extends AppCompatActivity {
                 });
 
                 layoutActividades.addView(actividadView);
-
-
-                View separador = new View(this);
-                separador.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        1));
-                separador.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
-                layoutActividades.addView(separador);
 
             } while (cursor.moveToNext());
             cursor.close();

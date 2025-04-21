@@ -1,38 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginHorizontal="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#DDDDDD">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvEditar"
-            android:layout_width="wrap_content"
+        <!-- Título principal + Switch (tvNombre) -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Editar"
-            android:textColor="#2196F3"
-            android:textStyle="bold"
-            android:layout_marginEnd="16dp"/>
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/tvEliminar"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                tools:text="Nombre actividad" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promocionar"
+                android:textSize="14sp"
+                android:layout_marginEnd="4dp" />
+
+            <Switch
+                android:id="@+id/switchPromocion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Agregar participantes (tvTituloActividad + icono) -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Eliminar"
-            android:textColor="#F44336"
-            android:textStyle="bold"/>
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvTituloActividad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agregar asistentes"
+                android:textStyle="bold"
+                android:textColor="#009035" />
+
+            <ImageView
+                android:id="@+id/iconoAgregarAsistentes"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/plusm"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+        <!-- Descripción (tvEmail con fecha y lugar) -->
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="8dp"
+            tools:text="Lugar: Auditorio | Fecha: 21/04/2025" />
+
+        <!-- Botones de acción -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btnVerDetalles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver Detalles"
+                app:backgroundTint="#22C55E"
+                android:textColor="@android:color/white" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnCompartir"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Compartir"
+                android:scaleType="fitCenter"
+                android:src="@drawable/compartir" />
+
+            <ImageButton
+                android:id="@+id/btnEditar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Editar"
+                android:scaleType="fitCenter"
+                android:src="@drawable/editar" />
+
+            <ImageButton
+                android:id="@+id/btneliminar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Eliminar"
+                android:scaleType="fitCenter"
+                android:src="@drawable/eliminar" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
