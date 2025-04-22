@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class Dbhelper extends SQLiteOpenHelper {
+public class DbHelper extends SQLiteOpenHelper {
 
     // Constructor que recibe el contexto y pasa los parámetros necesarios al constructor de la clase padre.
-    public Dbhelper(@Nullable Context context) {
+    public DbHelper(@Nullable Context context) {
         super(context, Constantes.NAME_DB, null, Constantes.NUM_VERSION);
     }
 

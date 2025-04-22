@@ -6,12 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class ManagerDB {
-    private final Dbhelper dbHelper;
+    private final DbHelper dbHelper;
     private SQLiteDatabase db;
 
     // Constructor de ManagerDB
     public ManagerDB(Context context) {
-        dbHelper = new Dbhelper(context);
+        dbHelper = new DbHelper(context);
         db = dbHelper.getWritableDatabase(); // Abrir la base de datos en modo escritura
     }
 
