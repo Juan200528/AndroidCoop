@@ -15,6 +15,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.juan.proyectcoop.controller.crear_actividadActivity;
+import com.kevin.basesdedatoslocalesk.controller.MainActivity;
+
 public class PromocionarAct extends AppCompatActivity {
     TextView tvTitulo, tvPromocionada;
     Button btnVerDetalles, btnCrearActividad;
@@ -57,7 +60,7 @@ public class PromocionarAct extends AppCompatActivity {
 
         // AQUI SE PONE LA PANTALLA DE CREAR ACTIVIDAD NUEVA
         btnCrearActividad.setOnClickListener(v -> {
-            Intent intent = new Intent(PromocionarAct.this, CrearAct.class);
+            Intent intent = new Intent(PromocionarAct.this, crear_actividadActivity.class);
             startActivity(intent);
         });
 
